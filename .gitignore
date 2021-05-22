@@ -1,0 +1,7 @@
+.DS_Store
+.oc3-valet.json
+node_modules
+.idea
+.htaccess
+config.php
+storage

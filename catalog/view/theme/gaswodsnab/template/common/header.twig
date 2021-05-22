@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/"> 
+    <title>{{title}}</title>
+    <base href="{{ base }}" />
+    {% for style in styles %}
+        <link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
+    {% endfor %}
+    <link href="catalog/view/theme/gaswodsnab/stylesheet/stylesheet.css" rel="stylesheet">
+    {% if description %}
+    <meta name="description" content="{{ description }}" />
+    {% endif %}
+    {% if keywords %}
+    <meta name="keywords" content="{{ keywords }}" />
+    {% endif %}
+</head>
+<body>
+    <div class="grey">
+        <div class="container headerCont">
+            <nav class="menu">
+                <ul>
+                  <li><a href="#">Гарантия и возврат</a></li>
+                  <li><a href="#">Доставка и оплата</a></li>
+                  <li><a href="#">Блог</a></li> 
+                </ul>
+                <div class="timeJob">Пн–Сб 9:00–21:00</div>
+            </nav>
+            <div class="telephone">
+                <a href="+ 380 97 103 01 04">+ 380 97 103 01 04</a>
+                <div>
+                    <a href="#">
+                        <button type="button">Перезвоните мне</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div id="logo">
+                    {% if logo %}
+                        <a href="{{ home }}" class="logo">
+                            <img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" />
+                            <p>качественные водонагреватели</p>
+                        </a>
+                    {% else %}
+                        <h1><a href="{{ home }}">{{ name }}</a></h1>
+                    {% endif %}</div>
+                <div class="search">
+                    {{search}}
+                </div>
+            </div>
+        </div>
+    </header>
