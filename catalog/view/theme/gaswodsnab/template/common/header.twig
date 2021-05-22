@@ -10,7 +10,7 @@
     {% for style in styles %}
         <link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
     {% endfor %}
-    <link href="catalog/view/theme/gaswodsnab/stylesheet/stylesheet.css" rel="stylesheet">
+    <link href="{{ load_asset('/stylesheet/stylesheet.css') }}" rel="stylesheet">
     {% if description %}
     <meta name="description" content="{{ description }}" />
     {% endif %}

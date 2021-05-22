@@ -117,6 +117,7 @@ class Twig_Environment
         $this->addExtension(new Twig_Extension_Core());
         $this->addExtension(new Twig_Extension_Escaper($options['autoescape']));
         $this->addExtension(new Twig_Extension_Optimizer($options['optimizations']));
+        $this->addExtension(new Twig_Extension_LoadAsset());
         $this->staging = new Twig_Extension_Staging();
 
         // For BC

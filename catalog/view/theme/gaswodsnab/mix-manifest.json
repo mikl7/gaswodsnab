@@ -1,4 +1,6 @@
 {
-    "/js/index.js": "/js/index.js",
-    "/stylesheet/stylesheet.css": "/stylesheet/stylesheet.css"
+    "/js/index.js": "/js/index.js?id=93840186c4a7ef6c56b9",
+    "/stylesheet/stylesheet.css": "/stylesheet/stylesheet.css?id=c44705b6e62dfccae1cd",
+    "/js/index.min.js": "/js/index.min.js?id=93840186c4a7ef6c56b9",
+    "/stylesheet/stylesheet.min.css": "/stylesheet/stylesheet.min.css?id=c44705b6e62dfccae1cd"
 }
