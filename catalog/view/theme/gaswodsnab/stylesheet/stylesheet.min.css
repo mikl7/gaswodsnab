@@ -373,6 +373,34 @@
   [hidden] {
     display: none;
   }
+.error_404 {
+  position: relative;
+}
+.error_404__buttons {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 30%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.error_404__title {
+  color: #fff;
+  font-family: Exo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+}
+.error_404__button {
+  padding: 1rem 1.2rem;
+  color: #3F4E5D;
+  background: #fff;
+  border-radius: 5px 3px 3px 5px;
+}
+
 body {
   font-family: Exo2;
   font-weight: 400;

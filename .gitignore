@@ -5,3 +5,4 @@ node_modules
 .htaccess
 config.php
 storage
+image/cache/*
