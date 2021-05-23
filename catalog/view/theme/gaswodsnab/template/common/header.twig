@@ -50,9 +50,22 @@
                         </a>
                     {% else %}
                         <h1><a href="{{ home }}">{{ name }}</a></h1>
-                    {% endif %}</div>
+                    {% endif %}
+                </div>
                 <div class="search">
                     {{search}}
+                </div>
+                <div class="logged">
+                    {% if logged %}
+                    <a href="{{ logout }}">{{ text_logout }}</a>
+                    {% else %}
+                    <div class="profile">
+                        <a href="{{ login }}">
+                            <img src="/catalog/view/theme/gaswodsnab/image/icons/profile.png" alt="profile">{{ text_login }}
+                        </a>
+                    </div>
+                    <a href="{{ register }}">{{ text_register }}</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
