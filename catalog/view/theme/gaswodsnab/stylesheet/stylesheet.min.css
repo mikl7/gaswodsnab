@@ -789,6 +789,7 @@
 .search #search .form-control {
   width: 404px;
   height: 40px;
+  padding-left: 16.43px;
   border: 1px solid #3F4E5D;
   box-sizing: border-box;
   border-radius: 10px;
@@ -802,6 +803,81 @@
   border-radius: 5px;
   background: #3F4E5D;
   border: 0;
+}
+
+.navbar {
+  height: 59px;
+  background: #57AE00;
+}
+.navbar .menu {
+  display: flex;
+  justify-content: center;
+  padding-right: 280px;
+}
+.navbar .menu ul {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+.navbar .menu ul a {
+  margin-left: 58px;
+}
+.navbar .menu ul a:nth-of-type(1) {
+  margin-left: 0;
+}
+.navbar .menu ul a li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+.navbar .menu ul a li img {
+  padding-right: 11px;
+}
+.navbar .menu .catalogServices {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  padding-right: 277px;
+}
+.navbar .menu .catalogServices .catalog {
+  display: flex;
+  justify-content: center;
+  width: 152px;
+  padding: 16px 30px;
+  background: #FFFFFF;
+}
+.navbar .menu .catalogServices .catalog li {
+  color: #3F4E5D;
+}
+.navbar .menu .catalogServices a {
+  display: flex;
+  justify-content: center;
+  padding: 16px 30px;
+  margin: 0;
+}
+.navbar .menu .catalogServices a li {
+  font-size: 24px;
+}
+.navbar .menu .catalogServices a li img {
+  padding-left: 6px;
+}
+
+ul a li .total {
+  position: absolute;
+  padding-left: 15px;
+  padding-bottom: 17px;
+}
+ul a li .total span {
+  display: flex;
+  justify-content: center;
+  width: 16px;
+  height: 17px;
+  background: #FFFFFF;
+  border-radius: 3px;
+  color: #3F4E5D;
+  font-weight: 700;
+  font-size: 13px;
 }
 
 body {
@@ -858,7 +934,7 @@ body .headerCont .telephone div a button {
   border-radius: 8px;
   transition-duration: 0.7s;
   background-color: #3F4E5D;
-  border: 2px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
   color: #FFFFFF;
 }
 body .headerCont .telephone div a button:hover {
@@ -905,4 +981,21 @@ header .logged a img {
   width: 14.34px;
   height: 18.41px;
   padding-right: 13.5px;
+}
+
+.wishlist div {
+  position: absolute;
+  padding-left: 8px;
+  padding-bottom: 17px;
+}
+.wishlist div span {
+  display: flex;
+  justify-content: center;
+  width: 16px;
+  height: 17px;
+  background: #FFFFFF;
+  border-radius: 3px;
+  color: #3F4E5D;
+  font-weight: 700;
+  font-size: 13px;
 }
