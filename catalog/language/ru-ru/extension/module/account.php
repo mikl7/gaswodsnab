@@ -3,8 +3,8 @@
 $_['heading_title']    = 'Личный кабинет';
 
 // Text
-$_['text_register']    = 'Регистрация';
-$_['text_login']       = 'Вход';
+$_['text_register']    = 'Зарегестрироваться';
+$_['text_login']       = 'Войти';
 $_['text_logout']      = 'Выход';
 $_['text_forgotten']   = 'Забыли пароль?';
 $_['text_account']     = 'Моя информация';
@@ -19,4 +19,3 @@ $_['text_return']      = 'Возвраты';
 $_['text_transaction'] = 'История транзакций';
 $_['text_newsletter']  = 'E-Mail рассылка';
 $_['text_recurring']   = 'Регулярные платежи';
-

@@ -15,7 +15,7 @@ $_['text_checkout']                  = 'Оформление заказа';
 $_['text_stock']                     = 'Склад';
 $_['text_affiliate']                 = 'Партнерство';
 $_['text_captcha']                   = 'Защита от роботов';
-$_['text_register']                  = 'Регистрация';
+$_['text_register']                  = 'Зарегестрироваться';
 $_['text_guest']                     = 'Гостевой заказ';
 $_['text_return']                    = 'Возвраты';
 $_['text_contact']                   = 'Контакты';
@@ -203,4 +203,3 @@ $_['error_log_required']             = 'Имя log файла обязатель
 $_['error_log_invalid']              = 'Некорректное имя Log файла!';
 $_['error_log_extension']            = 'Расширение Log файла должно быть .log!';
 $_['error_encryption']               = 'Ключ шифрования должен быть от 32 до 1024 символов!';
-

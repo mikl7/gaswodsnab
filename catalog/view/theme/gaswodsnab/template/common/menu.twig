@@ -1,11 +1,21 @@
 <nav id="menu" class="navbar">
   <div class="menu">
     <ul class="catalogServices">
-      <a href="#" class="catalog">
-        <li>Каталог<img src="/catalog/view/theme/gaswodsnab/image/icons/arrow.png" alt="arrow"></li>
-      </a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Каталог
+          <div class="arrow">
+            <img class="arrow" src="/catalog/view/theme/gaswodsnab/image/icons/arrow.png" alt="arrow">
+          </div>
+        </button>
+        <div class="dropdown-content">
+          {% for category in categories %}
+              <a href="{{ category.href }}">{{ category.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
       <a href="#">
-        <li>Услуги<img src="/catalog/view/theme/gaswodsnab/image/icons/arrow.png" alt="arrow"></li>
+          <li>Услуги<img src="/catalog/view/theme/gaswodsnab/image/icons/arrow.png" alt="arrow"></li>
       </a>
     </ul>
     <ul class="">

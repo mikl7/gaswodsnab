@@ -90,3 +90,4 @@ $_['text_processing_status']    = 'Заказы в процессе';
 $_['text_other_status']         = 'Остальные заказы';
 
 
+$_['text_myservice']              = 'Услуги';
