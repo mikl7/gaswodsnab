@@ -97,7 +97,7 @@ class Twig_Environment
         }
 
         $options = array_merge(array(
-            'debug' => false,
+            'debug' => true,
             'charset' => 'UTF-8',
             'base_template_class' => 'Twig_Template',
             'strict_variables' => false,
@@ -114,6 +114,7 @@ class Twig_Environment
         $this->strictVariables = (bool) $options['strict_variables'];
         $this->setCache($options['cache']);
 
+        $this->addExtension(new Twig_Extension_Debug());
         $this->addExtension(new Twig_Extension_Core());
         $this->addExtension(new Twig_Extension_Escaper($options['autoescape']));
         $this->addExtension(new Twig_Extension_Optimizer($options['optimizations']));
@@ -314,7 +315,7 @@ class Twig_Environment
         $key .= json_encode(array_keys($this->extensions));
         $key .= function_exists('twig_template_get_attributes');
 
-        return $this->templateClassPrefix.hash('sha256', $key).(null === $index ? '' : '_'.$index);
+        return $this->templateClassPrefix . hash('sha256', $key) . (null === $index ? '' : '_' . $index);
     }
 
     /**
@@ -401,7 +402,7 @@ class Twig_Environment
                     $this->cache->write($key, $content);
                 }
 
-                eval('?>'.$content);
+                eval('?>' . $content);
             }
         }
 
@@ -672,7 +673,7 @@ class Twig_Environment
             $compiled = $this->compile($this->parse($this->tokenize($source, $name)), $source);
 
             if (isset($source[0])) {
-                $compiled .= '/* '.str_replace(array('*/', "\r\n", "\r", "\n"), array('*//* ', "\n", "\n", "*/\n/* "), $source)."*/\n";
+                $compiled .= '/* ' . str_replace(array('*/', "\r\n", "\r", "\n"), array('*//* ', "\n", "\n", "*/\n/* "), $source) . "*/\n";
             }
 
             return $compiled;
@@ -975,7 +976,7 @@ class Twig_Environment
             $pattern = str_replace('\\*', '(.*?)', preg_quote($pattern, '#'), $count);
 
             if ($count) {
-                if (preg_match('#^'.$pattern.'$#', $name, $matches)) {
+                if (preg_match('#^' . $pattern . '$#', $name, $matches)) {
                     array_shift($matches);
                     $filter->setArguments($matches);
 
@@ -1134,7 +1135,7 @@ class Twig_Environment
             $pattern = str_replace('\\*', '(.*?)', preg_quote($pattern, '#'), $count);
 
             if ($count) {
-                if (preg_match('#^'.$pattern.'$#', $name, $matches)) {
+                if (preg_match('#^' . $pattern . '$#', $name, $matches)) {
                     array_shift($matches);
                     $function->setArguments($matches);
 

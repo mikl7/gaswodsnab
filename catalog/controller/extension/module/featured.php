@@ -1,6 +1,8 @@
 <?php
-class ControllerExtensionModuleFeatured extends Controller {
-	public function index($setting) {
+class ControllerExtensionModuleFeatured extends Controller
+{
+	public function index($setting)
+	{
 		$this->load->language('extension/module/featured');
 
 		$this->load->model('catalog/product');
@@ -50,6 +52,14 @@ class ControllerExtensionModuleFeatured extends Controller {
 						$rating = false;
 					}
 
+					if ($product_info['quantity'] <= 0) {
+						$data['stock'] = $product_info['stock_status'];
+					} elseif ($this->config->get('config_stock_display')) {
+						$data['stock'] = $product_info['quantity'];
+					} else {
+						$data['stock'] = $this->language->get('text_instock');
+					}
+
 					$data['products'][] = array(
 						'product_id'  => $product_info['product_id'],
 						'thumb'       => $image,
@@ -59,11 +69,14 @@ class ControllerExtensionModuleFeatured extends Controller {
 						'special'     => $special,
 						'tax'         => $tax,
 						'rating'      => $rating,
-						'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
+						'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id']),
+						'stock'		  => $data['stock'],
+						'reviews' 	  => $product_info['reviews'],
 					);
 				}
 			}
 		}
+
 
 		if ($data['products']) {
 			return $this->load->view('extension/module/featured', $data);

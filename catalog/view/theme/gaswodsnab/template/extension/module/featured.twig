@@ -1,0 +1,67 @@
+<h3>Популярные товары</h3>
+<div class="row">
+  {% for product in products %}
+  <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="product-thumb transition">
+      <div class="image">
+        <div class="button-group">
+          <button class="compair_product" type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');">
+            <img src="/catalog/view/theme/gaswodsnab/image/icons/compair_product.png" alt="">
+          </button>
+          <button class="bookmark_product" type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');">
+            <img src="/catalog/view/theme/gaswodsnab/image/icons/bookmark_product.png" alt="">
+          </button>
+        </div>
+        <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+      </div>
+      <div class="caption">
+        <p class="stock">{{ product.stock }}</p>
+        <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+        <div class="rating">
+          {% if product.rating %}
+            <div class="stars">
+              {% for i in 1..5 %}
+                {% if product.rating >= i %}
+                <span><img src="/catalog/view/theme/gaswodsnab/image/icons/RatingStarYellow.png" alt="{{ i }}"></span>
+                {% else %}
+                <span><img src="/catalog/view/theme/gaswodsnab/image/icons/RatingStarGrey.png" alt="{{ i }}"></span>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="reviews">
+              <span>{{ product.reviews }}</span>
+              {% if product.reviews > 1 and product.reviews < 5 %}
+                <span>отзывa</span>
+                {% elseif product.reviews == 1 %}
+                <span>отзыв</span>
+                {% else %}
+                <span>отзывов</span>
+              {% endif %}
+            </div>
+            {% else %}
+              <div class="rating_grey">
+                {% for i in 1..5 %}
+                  <span></span><img src="/catalog/view/theme/gaswodsnab/image/icons/RatingStarGrey.png" alt="{{ i }}"></span>  
+                {% endfor %}
+              </div>
+            {% endif %}
+        </div>
+        <div class="price_cart">
+          <p class="price">{{ product.price }}</p>
+          <button type="button" onclick="cart.add('{{ product.product_id }}');"><span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+        </div>
+        <div class="description">
+          {{ product.description }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div class="everything_product">
+  <a href="#">Посмотреть всё 
+    <div class="arrow">
+      <img src="/catalog/view/theme/gaswodsnab/image/icons/arrow_rigth_prod.png" alt="">
+    </div>
+  </a>
+</div>

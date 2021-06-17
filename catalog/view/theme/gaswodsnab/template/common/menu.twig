@@ -1,18 +1,38 @@
-<nav id="menu" class="navbar">
+   <nav id="menu" class="navbar">
   <div class="menu">
     <ul class="catalogServices">
-      <a href="#" class="catalog">
-        <li>Каталог<img src="/catalog/view/theme/gaswodsnab/image/icons/arrow.png" alt="arrow"></li>
-      </a>
-      <a href="#">
-        <li>Услуги<img src="/catalog/view/theme/gaswodsnab/image/icons/arrow.png" alt="arrow"></li>
-      </a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Каталог
+          <div class="arrow">
+            <img class="arrow" src="/catalog/view/theme/gaswodsnab/image/icons/arrow.png" alt="arrow">
+          </div>
+        </button>
+        <div class="dropdown-content">
+          {% for category in categories %}
+              <a href="{{ category.href }}">{{ category.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn_service">
+          Услуги
+          <div class="arrow">
+            <img class="arrow" src="/catalog/view/theme/gaswodsnab/image/icons/arrow.png" alt="arrow">
+          </div>
+        </button>
+        <div class="dropdown-content">
+          {% for category in categories %}
+              <a href="{{ category.href }}">{{ category.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
     </ul>
-    <ul class="">
+    <ul>
       <a href="{{ compare }}" title="{{ text_compare }}">
         <li class="menu-right">
-          <img src="/catalog/view/theme/gaswodsnab/image/icons/compair.png" alt="compair">
-          {% if text_compare > 0%}
+          <img src="/catalog/view/theme/gaswodsnab/image/icons/compair.png" alt="compair" >
+          {% if text_compare > 0 %}
           <div>
             <span>{{ text_compare }}</span>
           </div>
@@ -23,7 +43,7 @@
       <a href="{{ wishlist }}" id="wishlist-total" title="{{ text_wishlist }}">
         <li class="menu-right">
           <img src="/catalog/view/theme/gaswodsnab/image/icons/bookmark.png" alt="bookmark">
-          {% if text_wishlist > 0%}
+          {% if text_wishlist > 0 %}
           <div>
             <span>{{ text_wishlist }}</span>
           </div>
@@ -31,9 +51,7 @@
           Отложенные
         </li>
       </a>
-      <a href="">
-          {{ cart }}
-      </a>
+      {{ cart }}
     </ul>    
   </div>
 </nav>

@@ -2,10 +2,14 @@
 @import "_search"
 @import "_menu"
 @import "_cart"
+@import "_footer"
+@import "_home"
 
 body
     font-family: Exo2
     font-weight: 400
+    line-height: 130%
+    letter-spacing: 0.03em
     .grey
         background-color: #3F4E5D
         height: 100px
@@ -43,7 +47,7 @@ body
                     height: 48px
                     width: 205px
                     border-radius: 8px
-                    transition-duration: 0.7s
+                    transition-duration: 0.4s
                     background-color: #3F4E5D
                     border: 1px solid #FFFFFF
                     color: #FFFFFF
@@ -56,8 +60,8 @@ header
     background-color: #FFFFFF
     .row
         display: flex
-        flex-direction: row
         justify-content: space-between
+        align-items: center
         #logo
             width: 300px
             .logo
@@ -68,34 +72,16 @@ header
                 p
                     color: #3B6D9A
                     font-size: 16px
-    .logged
-        width: 350px
-        padding: 0
-        padding-top: 27.39px
-        padding-left: 48px
-        display: flex
-        a
+        .logged
             display: flex
-            font-weight: 700
-            font-size: 18px
-            color: #3F4E5D
-            padding-right: 28.66px
-            img
-                width: 14.34px
-                height: 18.41px
-                padding-right: 13.5px
-.menu-right
-    div
-        position: absolute
-        padding-left: 10px
-        padding-bottom: 17px
-        span
-            display: flex
-            justify-content: center
-            width: 16px
-            height: 17px
-            background: #FFFFFF
-            border-radius: 3px
-            color: #3F4E5D
-            font-weight: 700
-            font-size: 13px
+            width: 324px
+            a
+                display: flex
+                font-weight: 700
+                font-size: 18px
+                color: #3F4E5D
+                padding-right: 28.66px
+                img
+                    width: 14.34px
+                    height: 18.41px
+                    padding-right: 13.5px

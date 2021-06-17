@@ -1,9 +1,11 @@
 <?php
-class ControllerProductProduct extends Controller {
+class ControllerProductProduct extends Controller
+{
 	private $error = array();
 
-	public function index() {
-        //$this->load->language('error/button');
+	public function index()
+	{
+		//$this->load->language('error/button');
 		$this->load->language('product/product');
 
 		$data['breadcrumbs'] = array();
@@ -439,7 +441,7 @@ class ControllerProductProduct extends Controller {
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
-			
+
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');
@@ -521,7 +523,8 @@ class ControllerProductProduct extends Controller {
 		}
 	}
 
-	public function review() {
+	public function review()
+	{
 		$this->load->language('product/product');
 
 		$this->load->model('catalog/review');
@@ -560,7 +563,8 @@ class ControllerProductProduct extends Controller {
 		$this->response->setOutput($this->load->view('product/review', $data));
 	}
 
-	public function write() {
+	public function write()
+	{
 		$this->load->language('product/product');
 
 		$json = array();
@@ -600,7 +604,8 @@ class ControllerProductProduct extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 
-	public function getRecurringDescription() {
+	public function getRecurringDescription()
+	{
 		$this->load->language('product/product');
 		$this->load->model('catalog/product');
 
@@ -623,7 +628,7 @@ class ControllerProductProduct extends Controller {
 		}
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
-		
+
 		$recurring_info = $this->model_catalog_product->getProfile($product_id, $recurring_id);
 
 		$json = array();

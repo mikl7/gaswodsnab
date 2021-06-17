@@ -7,8 +7,30 @@
   \*************************/
 /***/ (() => {
 
-console.log('test');
-console.log('test3');
+var iconCompair = document.querySelectorAll('.compair_product');
+var imgCompairActiv = '/catalog/view/theme/gaswodsnab/image/icons/compair_product_active.png';
+var imgCompairPassive = 'http://gaswodsnab/catalog/view/theme/gaswodsnab/image/icons/compair_product.png';
+var iconBookmark = document.querySelectorAll('.bookmark_product');
+var imgBookmarkActiv = '/catalog/view/theme/gaswodsnab/image/icons/bookmark_product_active.png';
+var imgBookmarkPassive = 'http://gaswodsnab/catalog/view/theme/gaswodsnab/image/icons/bookmark_product.png';
+iconCompair.forEach(function (el) {
+  el.onclick = function () {
+    if (el.childNodes[1].src == imgCompairPassive) {
+      el.childNodes[1].src = imgCompairActiv;
+    } else {
+      el.childNodes[1].src = imgCompairPassive;
+    }
+  };
+});
+iconBookmark.forEach(function (el) {
+  el.onclick = function () {
+    if (el.childNodes[1].src == imgBookmarkPassive) {
+      el.childNodes[1].src = imgBookmarkActiv;
+    } else {
+      el.childNodes[1].src = imgBookmarkPassive;
+    }
+  };
+});
 
 /***/ }),
 
